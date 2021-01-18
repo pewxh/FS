@@ -1,0 +1,24 @@
+.i{
+    font-style: italic;
+} 
+
+.u{
+    text-decoration: underline;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+td,th {
+    border: 1px solid #868484;
+    padding: 8px;
+    text-align: center;
+    border-style: dotted;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+} /*for every even row in the column*/
