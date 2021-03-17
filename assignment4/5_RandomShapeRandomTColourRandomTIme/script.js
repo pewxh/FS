@@ -1,14 +1,19 @@
 const shape = document.getElementById('shape');
+const text = document.querySelector('p');
 
-shape.addEventListener('click', afterClicked);
+shape.addEventListener('click', () => {
+  var time = 700 + randomNumGen(500);
+  setTimeout(afterClicked, time);
+  text.innerHTML = `It took ${time} ns to load!!`;
+});
 
 function afterClicked() {
   console.log('clicked..');
-  this.style.borderRadius = `${randomNumGen(100)}%`;
-  this.style.height = `${Math.max(10, randomNumGen(50))}%`;
-  this.style.width = `${Math.max(10, randomNumGen(50))}%`;
-  this.style.margin = randomPositionGenerator();
-  this.style.backgroundColor = randomColourGenerator();
+  shape.style.borderRadius = `${randomNumGen(100)}%`;
+  shape.style.height = `${Math.max(10, randomNumGen(50))}%`;
+  shape.style.width = `${Math.max(10, randomNumGen(50))}%`;
+  shape.style.margin = randomPositionGenerator();
+  shape.style.backgroundColor = text.style.color = randomColourGenerator();
 }
 
 function randomPositionGenerator() {
